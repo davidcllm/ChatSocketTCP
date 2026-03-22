@@ -91,10 +91,10 @@ public class ChatServer {
                 addClient(out);
 
                 //Se recibe un msj inicial, por ejemplo, el nombre del cliente
-                out.print("Bienvenido al chat de mensajes ¿Cuál es tu nombre?: ");
+                out.println("Bienvenido al chat de mensajes ¿Cuál es tu nombre?: ");
                 clientName = in.readLine();
 
-                if (clientName == null || clientName.isBlank()) clientName = "Anónimo";
+                if (clientName == null || clientName.isEmpty()) clientName = "Anónimo";
 
                 broadcast("*** " + clientName + " se ha unido al chat ***");
 
