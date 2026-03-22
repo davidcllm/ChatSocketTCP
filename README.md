@@ -31,7 +31,8 @@ java ChatClient
 1. El servidor inicia y queda esperando en el puerto **5000**.
 2. El cliente se conecta y el servidor pide un **nombre**.
 3. Escribe mensajes → todos los clientes conectados los reciben.
-4. Escribe `/salir` para desconectarte limpiamente.
+4. Escribe `/salir` para desconectarte limpiamente de los clientes.
+5. Ctrl+C para salir del servidor
 
 ## Conceptos aplicados
 | Concepto | Dónde |
