@@ -105,7 +105,7 @@ public class ChatServer {
                         break;
                     }
 
-                    broadcast(clientName + " -> " + message);
+                    broadcast(clientName + " -> " + message + "\n");
                 }
             }
             catch (IOException e) {
