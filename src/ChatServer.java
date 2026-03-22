@@ -21,9 +21,9 @@ public class ChatServer {
     private static final List<PrintWriter> clientWriters = Collections.synchronizedList(new ArrayList<>());
 
     public static void main(String[] args) {
-        System.out.println("║        SERVIDOR DE CHAT TCP          ║");
-        System.out.printf ("║  Escuchando en el puerto %-4d        ║%n", PORT);
-        System.out.println("║  Esperando clientes...               ║");
+        System.out.println("|        SERVIDOR DE CHAT TCP          |");
+        System.out.printf ("|   Escuchando en el puerto %-4d       |%n", PORT);
+        System.out.println("|       Esperando clientes...          |");
 
 
         //ExecutorService gestiona un conjunto de hilos (uno por cliente)

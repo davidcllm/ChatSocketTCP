@@ -16,8 +16,8 @@ public class ChatClient {
     private static final int PORT = 5000;
 
     public static void main(String[] args) {
-        System.out.println("║         CLIENTE DE CHAT TCP          ║");
-        System.out.printf ("║  Conectando a %s:%-5d          ║%n", HOST, PORT);
+        System.out.println("|         CLIENTE DE CHAT TCP          |");
+        System.out.printf ("|        Conectando a %s:%-5d          |%n", HOST, PORT);
 
         //Cierra el socket y la transimision de mensajes
         try (
