@@ -3,6 +3,16 @@ import java.net.*;
 import java.util.*;
 import java.util.concurrent.*;
 
+/*
+Servidor de chat TCP que permite multiples clientes a la vez.
+
+Funcionamiento:
+-ServerSocket que escucha al puerto 5000.
+-Por cada cliente admitido se crea un hilo con Client Handlet.
+-El servidor transmite (broadcast) el mensaje recibido a todos los clientes conetados.
+
+ */
+
 public class ChatServer {
     //Se establece el puerto de escucha
     private static final int PORT = 5000;
