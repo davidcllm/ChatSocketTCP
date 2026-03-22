@@ -73,7 +73,16 @@ public class ChatClient {
 
         @Override
         public void run() {
-
+            try {
+                String serverMessage;
+                // readLine() bloquea hasta que llega una línea o el servidor cierra
+                while ((serverMessage = serverIn.readLine()) != null) {
+                    System.out.println(serverMessage);
+                }
+            } catch (IOException e) {
+                // Ocurre cuando el socket se cierra (desconexión normal o error)
+                System.out.println("\nInfo -> Conexión con el servidor cerrada.");
+            }
         }
     }
 

@@ -62,7 +62,7 @@ public class ChatServer {
     }
 
     //Elimina el print writer de un cliente al desconectarse
-    static void removeCient(PrintWriter writer) {
+    static void removeClient(PrintWriter writer) {
         clientWriters.remove(writer);
     }
 
@@ -91,7 +91,7 @@ public class ChatServer {
                 addClient(out);
 
                 //Se recibe un msj inicial, por ejemplo, el nombre del cliente
-                out.println("Bienvenido al chat de mensajes ¿Cuál es tu nombre?: ");
+                out.print("Bienvenido al chat de mensajes ¿Cuál es tu nombre?: ");
                 clientName = in.readLine();
 
                 if (clientName == null || clientName.isBlank()) clientName = "Anónimo";
@@ -112,9 +112,11 @@ public class ChatServer {
                 System.err.printf("Error -> Problema con cliente %s: %s%n", clientName, e.getMessage());
             }
             finally {
-                if (out != null) {
-
-                }
+                //Limpieza
+                if (out != null) removeClient(out);
+                broadcast("*** " + clientName + " ha abandonado el chat ***");
+                try { socket.close(); } catch (IOException ignored) {}
+                System.out.printf("Servidor -> Cliente %s desconectado.%n", clientName);
             }
         }
     }
